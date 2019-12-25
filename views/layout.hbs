@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Righteous&display=swap" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Портал вечеринок!</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if loggedin}}
+                <li>{{login.username}}</li>
+                <li><a href="/index/new">Устроить вечеринку</a></li>
+                <li><a href="/logout">Выйти</a></li>
+            {{else}}
+                <li><a href="/login">Войти</a></li>
+                <li><a href="/registration">Зарегистрироваться</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+{{{body}}}
+</body>
+</html>

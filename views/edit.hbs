@@ -1,0 +1,13 @@
+<form method="post" action="/party/edit">
+    <label for="title-input" class="block mar-b-1">Название вечерики:</label>
+    <input name="name" type="text" value="{{name}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+    <label for="title-input" class="block mar-b-1">Место вечеринки:</label>
+    <input  name="location" type="text" value="{{location}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+    <label for="title-input" class="block mar-b-1">Время вечерикник:</label>
+    <input name="time" type="text" value="{{time}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+    <button class="btn waves-effect waves-light" type="submit" name="id" value="{{_id}}">Send
+    </button>
+</form>
