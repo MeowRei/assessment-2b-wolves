@@ -18,5 +18,7 @@ document.querySelector ('.btn').addEventListener ('click', async (event) => {
 	const { result } = await response.json ()
 	if (!result) {
 		document.querySelector('form').appendChild(errDiv)
+	} else {
+		window.location = 'http://localhost:3000/'
 	}
 })

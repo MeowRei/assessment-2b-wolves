@@ -5,6 +5,7 @@ const partySchema = new mongoose.Schema({
 	location: String,
 	time: Date,
 	createAt: {type: mongoose.Types.ObjectId, ref: 'User'},
+	subscription: { type: Object, default: {}}
 });
 
 

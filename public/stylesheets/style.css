@@ -19,3 +19,13 @@ a {
     width: 250px;
     background-color: bisque;
 }
+
+.attendess-title {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 650px;
+}
+.attendess-title>div{
+    margin: 50px;
+}

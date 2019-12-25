@@ -1,21 +1,38 @@
 <div class="row">
-    <div class="col s12 m4">
-        <div class="row card blue-grey darken-1">
-
-            <div class="card-content white-text ">
-                <p>Название вечеринки: {{name}}</p>
-                <p>Место вечерики: {{location}}</p>
-                <p>Время вечеринки: {{time}}</p>
-                <p>Организатор: {{createAt}}</p>
+<div class="col s12 m4">
+<div class="row card blue-grey darken-1">
+    <div class="card-content white-text ">
+        <p>Название вечеринки: {{name}}</p>
+        <p>Место вечерики: {{location}}</p>
+        <p>Время вечеринки: {{time}}</p>
+        <p>Организатор: {{createAt}}</p>
+    </div>
+{{#if loggedin}}
+        <form method="post" action="/party/{{_id}}" class="{{_id}}" id="change">
+            <a class="btn waves-effect waves-light edit" href="/party/{{ _id }}/edit">Редактировать</a>
+            <a class="btn waves-effect waves-light delete" href="/party/{{ _id }}/delete">Удалить</a>
+        </form>
+    </div>
+    </div>
+    </div>
+    <div class="attendess-title">
+        <div><h4>Участники</h4>
+            <div class="attendess">
+                <!--    <div>{{attendes}} собирается принести {{item}}</div>-->
             </div>
         </div>
-{{#if loggedin}}
-        <form method="post" action="/cat/{{_id}}" class="{{_id}}">
-            <a class="btn waves-effect waves-light edit" href="/party/{{ _id }}/edit">edit</a>
-            <a class="btn waves-effect waves-light delete" href="/party/{{ _id }}/delete">Delete</a>
-        </form>
-    {{else}}
-    {{/if}}
+        <div>
+            <form method="post" action="/party/{{_id}}" class="{{_id}}">
+                <div style="width: 300px">
+                    <h5>Хотите присоединиться?</h5>
+                    <label>Я хочу приснести с собой:</label>
+                    <input type="text" name="bring" placeholder="водку, колу, фисташки" required/>
+                </div>
+                <a class="btn waves-effect waves-light go" href="/party/{{_id}}/go">Я иду!</a>
+            </form>
+        </div>
     </div>
-</div>
-<script src="/js/del.js"></script>
+
+{{else}}
+{{/if}}
+<script src="/js/change.js"></script>

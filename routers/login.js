@@ -13,7 +13,7 @@ router.route ('/').
 		const user = await User.findOne ({ email })
 		if (user && (await barest.compare (password, user.password))) {
 			req.session.user = user
-			res.redirect ('/')
+			res.json({'result':true})
 		} else {
 			res.json({'result':false})
 		}
